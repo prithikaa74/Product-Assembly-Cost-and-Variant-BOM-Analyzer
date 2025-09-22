@@ -1,4 +1,4 @@
-**Project Overview:
+##Project Overview:
 This project demonstrates a Medallion Architecture ETL pipeline using PySpark in Fabric, transforming raw data into actionable insights and visualizing them in Power BI.
 
 The pipeline covers:
@@ -8,7 +8,7 @@ Silver Layer – Cleaned and structured data
 Gold Layer – Aggregated and enriched data ready for analytics
 Power BI Dashboard – Interactive visuals and KPIs for insights
 
-**Logic Explanation (ETL / Medallion Layers):
+##Logic Explanation (ETL / Medallion Layers):
 
 Bronze Layer
 
@@ -36,7 +36,7 @@ Compute business metrics (e.g., total cost per product, total components, quanti
 Filter or sort data as required for reporting.
 Output: Gold Delta table ready for Power BI visualization.
 
-**Validation of Totals
+##Validation of Totals
 To ensure correctness of ETL transformations:
 
 Record Count Validation:
@@ -59,7 +59,7 @@ Spot Checks:
 Randomly check a few sample products/components to ensure calculations are correct.
 Compare totals in Power BI KPIs with Gold table metrics.
 
-**Technologies Used
+##Technologies Used
 
 PySpark – Data processing & transformations
 Fabric – Data storage & Medallion architecture
