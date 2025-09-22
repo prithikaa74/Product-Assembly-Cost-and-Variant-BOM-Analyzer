@@ -13,7 +13,7 @@ Power BI Dashboard – Interactive visuals and KPIs for insights
 
 ## Logic Explanation (ETL / Medallion Layers):
 
-Bronze Layer
+### Bronze Layer
 
 Purpose: Store raw data as-is from source files (Components.csv and ProductBOM.csv).
 
@@ -25,7 +25,7 @@ Store in Bronze folder in Fabric Lakehouse as Delta tables.
 
 No transformations; preserves all original columns and values.
 
-Silver Layer
+### Silver Layer
 
 Purpose: Clean and standardize the raw data for processing.
 
@@ -39,7 +39,7 @@ Rename columns for clarity (e.g., component_id, product_id).
 
 Output: Silver Delta table with structured, validated data.
 
-Gold Layer
+### Gold Layer
 
 Purpose: Create aggregated/enriched datasets for analytics and reporting.
 
@@ -56,7 +56,7 @@ Output: Gold Delta table ready for Power BI visualization.
 ## Validation of Totals
 To ensure correctness of ETL transformations:
 
-Record Count Validation:
+### Record Count Validation:
 
 Compare row counts between layers to ensure no unexpected loss.
 
@@ -66,7 +66,7 @@ print("Silver count:", silver_df.count())
 
 print("Gold count:", gold_df.count())
 
-Sum / Metric Validation:
+### Sum / Metric Validation:
 
 For numerical columns (e.g., quantity, cost), validate totals:
 
@@ -78,7 +78,7 @@ print("Total quantity in Gold:", gold_df.agg({"quantity_needed": "sum"}).show())
 
 Ensure the aggregated totals in Gold match expected business logic.
 
-Spot Checks:
+### Spot Checks:
 
 Randomly check a few sample products/components to ensure calculations are correct.
 
